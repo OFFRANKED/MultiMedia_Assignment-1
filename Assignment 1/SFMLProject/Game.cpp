@@ -20,9 +20,10 @@ Game::Game()
 #pragma endregion
 
 {
+	
 
 	mPlayer.setRadius(5.0f);
-	mPlayer.setPosition(100.f, 100.f);
+	
 	mPlayer.setFillColor(sf::Color::White);
 	
 	//Text code
@@ -136,13 +137,21 @@ void Game::update(sf::Time elapsedTime)
 	sf::Vector2f movement(0.f, 0.f);
 	if (mIsMovingLeft && mPlayer2.getPosition().x>0) movement.x -= PlayerSpeed;
 	if (mIsMovingRight && mPlayer2.getPosition().x<741) movement.x += PlayerSpeed;
+	//test
+	//if (mPlayer.getPosition().x>0) movement.x -= PlayerSpeed;
+	//if (mPlayer.getPosition().x<741) movement.x += PlayerSpeed;
 	//~~~~~~~~~~~~~~~~~~~~~~~~~Extra~~~~~~~~~~~~~~~~~~~~~~~~
 	//if (mIsMovingUp) movement.y -= 0.1f;
 	//if (mIsMovingDown) movement.y += 0.1f;
 	//~~~~~~~~~~~~~~~~~~~~~~~~~Extra~~~~~~~~~~~~~~~~~~~~~~~~
 	mPlayer2.move(movement * elapsedTime.asSeconds());
+	//mPlayer.move(movement * elapsedTime.asSeconds());
+	mPlayer.setPosition(p1, p2++);
+	/*if (p2 >= mPlayer2.getPosition().y)
+		i++;*/
 	UpdateLives();
 	updateScore();
+
 }
 
 void Game::render()
@@ -210,6 +219,7 @@ void Game::updateStatistics(sf::Time elapsedTime)
 
 void Game::updateScore()
 {
+	
 	mText.setString("Score : " + toString(i));
 }
 

@@ -46,6 +46,7 @@ private:
 	static const sf::Time Frametime;
 	bool mIsMovingLeft;
 	bool mIsMovingRight;
+	float p1 = 100.f, p2 = 100.f;
 
 	//~~~~~~~~~~~~~~~~~~~new other stuff~~~~~~~~~~~~~~~~~
 	sf::Image				mIcon;
