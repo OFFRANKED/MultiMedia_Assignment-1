@@ -1,3 +1,3 @@
 # MultiMedia_Assignment-1
 
-SFML Ping-Pong game.
+# SFML Ping-Pong game.
